@@ -24,4 +24,37 @@ class ProdutosTests {
 
 	}
 
+    @Test
+	void geraCodigoAoSetarNome(){
+		var produto = new Produto();
+		produto.setNome("Bicicleta");
+	
+		assertEquals("BIC-9", produto.getCodigo());
+	}
+
+    @Test
+	void geraCodigoAoSetarNome2(){
+		var produto = new Produto();
+		produto.setNome("Cachorro vermelho");
+		assertEquals("CAC-17", produto.getCodigo());
+	}
+
+	@Test
+	void geraCodigoAoSetarNome3(){
+		var produto = new Produto();
+		produto.setNome("Banana Nanica");
+		assertEquals("BAN-13", produto.getCodigo());
+	}
+
+	@Test
+	void casoDigiteCodigoDepoisAltereNomeOCodigoFicaOMesmo(){
+		var produto = new Produto();
+		produto.setCodigo("TTT-21");
+		produto.setNome("Banana Nanica");
+		assertEquals("TTT-21", produto.getCodigo());
+	}
+
+
+
+
 }

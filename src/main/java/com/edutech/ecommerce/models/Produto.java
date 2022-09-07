@@ -5,12 +5,23 @@ public class Produto {
     private String descricao;
     private double valor;
     private int quantidade;
+    private String codigo;
     
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    public String getCodigo() {
+        return codigo;
+    }
     public String getNome() {
         return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
+        if(this.codigo == null || this.codigo.isEmpty()){
+            this.codigo = this.nome.substring(0, 3).toUpperCase() + "-" + this.nome.length();
+        }
     }
     public String getDescricao() {
         return descricao;
